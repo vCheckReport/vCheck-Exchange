@@ -53,4 +53,4 @@ The following items are included as part of the vCheck-Exchange download, they a
 [*Back to top*](#Title)
 For more information, see the vCheck-vSphere repository: https://github.com/alanrenouf/vCheck-vSphere
 
-For an example Exchange output (doesnt contain all info) [click here](https://s3.amazonaws.com/vcheck/vCheck-Exchange_Sample.html)
+For an example Exchange output (doesnt contain all info) [click here](https://s3.amazonaws.com/vcheck/vCheck-Exchange_Sample.htm)
