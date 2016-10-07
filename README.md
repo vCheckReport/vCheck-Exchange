@@ -1,7 +1,7 @@
 <a name="Title">
 # vCheck Daily Report for Exchange
 
-![Alt text](https://s3.amazonaws.com/vcheck/vCheck-Exchange_Screenshot.PNG "vCheck Sample")
+![Alt text](https://vcheck.report/samples/vCheck-Exchange_Screenshot.PNG "vCheck Sample")
 
 |Navigation|
 |-----------------|
@@ -53,4 +53,4 @@ The following items are included as part of the vCheck-Exchange download, they a
 [*Back to top*](#Title)
 For more information, see the vCheck-vSphere repository: https://github.com/alanrenouf/vCheck-vSphere
 
-For an example Exchange output (doesnt contain all info) [click here](https://s3.amazonaws.com/vcheck/vCheck-Exchange_Sample.htm)
+For an example Exchange output (doesnt contain all info) [click here](https://vcheck.report/samples/vCheck-Exchange_Sample.htm)
