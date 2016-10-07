@@ -1,6 +1,6 @@
 <a name="Title">
 # vCheck Daily Report for Exchange
-![stars badge]][stars]
+[![stars badge]][stars]
 [![forks badge]][forks]
 [![issues badge]][issues]
 
