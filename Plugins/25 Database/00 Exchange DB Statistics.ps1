@@ -15,7 +15,7 @@ foreach($Database in $Databases)
    {
       if ($Database.Mounted)
       {
-         $DBStats = $MBStats | Where {$_.Database -eq $Database.Name} | Select @{Name="TotalMB";e={$_.TotalItemSize.value.ToMB()}},@{Name="TotalDeletedMB";e={$_.TotalDeletedItemSize.value.ToMB()}}
+         $DBStats = $MBStats | Where-Object {$_.Database -eq $Database.Name} | Select-Object @{Name="TotalMB";e={$_.TotalItemSize.value.ToMB()}},@{Name="TotalDeletedMB";e={$_.TotalDeletedItemSize.value.ToMB()}}
          if ($DBStats.Count -gt 0)
          {
             $MBAvgMB = "{0:N3}" -f (($DBStats | Measure-Object -Sum TotalMB).Sum / $DBStats.Count)

@@ -9,4 +9,4 @@ $PluginCategory = "Exchange"
 # Start of Settings
 # End of Settings
 
-$MobileDevices | Group-Object DeviceAccessState | Sort-Object Count -Descending |  Select Count, Name
+$MobileDevices | Group-Object DeviceAccessState | Sort-Object Count -Descending |  Select-Object Count, Name

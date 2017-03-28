@@ -11,9 +11,9 @@ $PluginCategory = "Exchange"
 $IncludeOK = $false
 # End of Settings
 
-$ExServers | Where {$_.IsE14OrLater -and $_.IsMailboxServer } | Test-ReplicationHealth | `
-   Where { $IncludeOK -or $_.Result.Value -ne "Passed" } | `
-   Select Server, Check, CheckDescription, Result
+$ExServers | Where-Object {$_.IsE14OrLater -and $_.IsMailboxServer } | Test-ReplicationHealth | `
+   Where-Object { $IncludeOK -or $_.Result.Value -ne "Passed" } | `
+   Select-Object Server, Check, CheckDescription, Result
 
 $TableFormat = @{"Result" = @(@{ "-eq 'Passed'"  = "cell,class|healthyText" },
                               @{ "-eq '*FAILED*'"  = "cell,class|criticalText" })}

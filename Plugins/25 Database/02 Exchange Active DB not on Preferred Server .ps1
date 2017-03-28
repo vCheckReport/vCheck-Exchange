@@ -9,5 +9,5 @@ $PluginCategory = "Exchange"
 # Start of Settings
 # End of Settings
 
-$Databases | Where {( $_.ActivationPreference | Where { $_.Value -eq 1 }).Key.name -ne $_.Server} | `
-   Select Identity, Server, @{Name="ActivationPreference";Expression={($_.ActivationPreference | Select -expandproperty Key) -join ", "}}
+$Databases | Where-Object {( $_.ActivationPreference | Where-Object { $_.Value -eq 1 }).Key.name -ne $_.Server} | `
+   Select-Object Identity, Server, @{Name="ActivationPreference";Expression={($_.ActivationPreference | Select-Object -expandproperty Key) -join ", "}}

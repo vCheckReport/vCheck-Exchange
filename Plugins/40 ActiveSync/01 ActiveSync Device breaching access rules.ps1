@@ -7,14 +7,14 @@ foreach ($AccessRule in $EASAccessRules)
 {
     if ($ShowBlocked)
     {
-        $MobileDevices | Where {$_.($AccessRule.characteristic) -eq $AccessRule.QueryString} | `
-            Select @{Name="User";e={$_.Identity.Parent.Parent.name}}, FriendlyName, DeviceAccessState, @{Name="Rule";e={"{0}={1}" -f $AccessRule.characteristic,  $AccessRule.QueryString}}
+        $MobileDevices | Where-Object {$_.($AccessRule.characteristic) -eq $AccessRule.QueryString} | `
+            Select-Object @{Name="User";e={$_.Identity.Parent.Parent.name}}, FriendlyName, DeviceAccessState, @{Name="Rule";e={"{0}={1}" -f $AccessRule.characteristic,  $AccessRule.QueryString}}
     }
     else
     {
-        $MobileDevices | Where {$_.($AccessRule.characteristic) -eq $AccessRule.QueryString} | `
-            Where {$_.DeviceAccessState -ne "Blocked" } | `
-            Select @{Name="User";e={$_.Identity.Parent.Parent.name}}, FriendlyName, DeviceAccessState, @{Name="Rule";e={"{0}={1}" -f $AccessRule.characteristic,  $AccessRule.QueryString}}
+        $MobileDevices | Where-Object {$_.($AccessRule.characteristic) -eq $AccessRule.QueryString} | `
+            Where-Object {$_.DeviceAccessState -ne "Blocked" } | `
+            Select-Object @{Name="User";e={$_.Identity.Parent.Parent.name}}, FriendlyName, DeviceAccessState, @{Name="Rule";e={"{0}={1}" -f $AccessRule.characteristic,  $AccessRule.QueryString}}
     }
 }
 
