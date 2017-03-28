@@ -9,6 +9,6 @@ $PluginCategory = "Exchange"
 # Start of Settings
 # End of Settings
 
-$ExServers  | Where {$_.IsE14OrLater } | Get-ServerHealth | `
+$ExServers  | Where-Object {$_.IsE14OrLater } | Get-ServerHealth | `
    Where-Object {$_.AlertValue -eq "Unhealthy" -and $_.CurrentHealthSetState -ne "NotApplicable" } | `
-   Select Server, CurrentHealthSetState,Name, TargetResource, HealthSetName,AlertValue, FirstAlertObservedTime
+   Select-Object Server, CurrentHealthSetState,Name, TargetResource, HealthSetName,AlertValue, FirstAlertObservedTime

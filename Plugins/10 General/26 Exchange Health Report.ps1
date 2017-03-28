@@ -9,6 +9,6 @@ $PluginCategory = "Exchange"
 # Start of Settings
 # End of Settings
 
-$ExServers | Where {$_.IsE14OrLater } | Foreach { Get-HealthReport -identity $_ } | `
+$ExServers | Where-Object {$_.IsE14OrLater } | ForEach-Object { Get-HealthReport -identity $_ } | `
    Where-object {$_.alertvalue -ne "Healthy" -and $_.State -ne "NotApplicable" } | `
-   Select Server, Identity, Alertvalue, State
+   Select-Object Server, Identity, Alertvalue, State

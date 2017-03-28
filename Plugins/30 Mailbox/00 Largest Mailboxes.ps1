@@ -5,11 +5,11 @@ $ReportMBs = 20
 
 if ($reportMBs -gt 0)
 {
-    $MBStats | Where  {$_.DisconnectDate -eq $null } | Sort-Object TotalItemSize -Descending | Select DisplayName, Database, ItemCount, TotalItemSize -First $ReportMBs
+    $MBStats | Where-Object  {$_.DisconnectDate -eq $null } | Sort-Object TotalItemSize -Descending | Select-Object DisplayName, Database, ItemCount, TotalItemSize -First $ReportMBs
 }
 else
 {
-    $MBStats | Where  {$_.DisconnectDate -eq $null } | Sort-Object TotalItemSize -Descending | Select DisplayName, Database, ItemCount, TotalItemSize
+    $MBStats | Where-Object  {$_.DisconnectDate -eq $null } | Sort-Object TotalItemSize -Descending | Select-Object DisplayName, Database, ItemCount, TotalItemSize
 }
 
 $Title = "Largest Exchange Mailboxes"

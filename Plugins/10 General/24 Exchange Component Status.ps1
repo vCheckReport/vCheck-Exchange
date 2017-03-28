@@ -11,4 +11,4 @@ $PluginCategory = "Exchange"
 
 $ExServers | Get-ServerComponentState | `
    Where-Object {$_.State -ne "Active"} | `
-   Select ServerFqdn, Component, State
+   Select-Object ServerFqdn, Component, State

@@ -9,5 +9,5 @@ $PluginCategory = "Exchange"
 # Start of Settings
 # End of Settings
 
-$MBStats | Where { $_.DisconnectDate -ne $null } | `
-   Select DisplayName, DatabaseName, DisconnectReason, DisconnectDate, MailboxGUID | Sort DisplayName
+$MBStats | Where-Object { $_.DisconnectDate -ne $null } | `
+   Select-Object DisplayName, DatabaseName, DisconnectReason, DisconnectDate, MailboxGUID | Sort-Object DisplayName

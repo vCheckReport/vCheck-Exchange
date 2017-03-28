@@ -12,8 +12,8 @@ $PluginCategory = "Exchange"
 foreach ($DAG in $DAGs) {
    New-Object PSObject -Property @{
       Name =  $DAG.Name
-      Servers = ($dag.Servers | select -ExpandProperty Name) -join ", "
-      "Operational Servers" = ($dag.OperationalServers | select -ExpandProperty Name) -join ", "
+      Servers = ($dag.Servers | Select-Object -ExpandProperty Name) -join ", "
+      "Operational Servers" = ($dag.OperationalServers | Select-Object -ExpandProperty Name) -join ", "
       "Witness Server" = $DAG.WitnessServer
       "Witness Dir" = $DAG.WitnessDirectory
       "Alt Witness Server" = $DAG.AlternateWitnessServer

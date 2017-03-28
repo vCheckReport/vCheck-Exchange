@@ -11,9 +11,9 @@ $PluginCategory = "Exchange"
 $ignoreDatabases = "RDB-"
 # End of Settings
 
-ForEach ($Server in ($ExServers | Where {$_.IsE14OrLater -and $_.IsMailboxServer})) {
+ForEach ($Server in ($ExServers | Where-Object {$_.IsE14OrLater -and $_.IsMailboxServer})) {
    Get-MailboxDatabaseCopyStatus -server $Server.Name | `
-      Where {$_.Status -ne "Healthy" -and $_.Status -ne "Mounted" -and $_.Name -notmatch $ignoreDatastores } | `
-      Select Name, Status, CopyQueueLength, ReplayQueueLength,LastInspectedLogTime, ContentIndexState | `
+      Where-Object {$_.Status -ne "Healthy" -and $_.Status -ne "Mounted" -and $_.Name -notmatch $ignoreDatastores } | `
+      Select-Object Name, Status, CopyQueueLength, ReplayQueueLength,LastInspectedLogTime, ContentIndexState | `
       Sort-Object Name
 }

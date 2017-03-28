@@ -11,7 +11,7 @@ $PluginCategory = "Exchange"
 $IncludeDevices = 30
 # End of Settings
 
-$TopDevices = $MobileDevices | Group-Object FriendlyName | Sort-Object Count -Descending | Select Count, Name -First ($IncludeDevices-1)
+$TopDevices = $MobileDevices | Group-Object FriendlyName | Sort-Object Count -Descending | Select-Object Count, Name -First ($IncludeDevices-1)
 $TopDevices += New-Object PSObject -Property @{"Count" = $MobileDevices.count-($TopDevices | Measure-Object -Sum Count).Sum; "Name"="Other"}
 
 $TopDevices
