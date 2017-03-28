@@ -32,8 +32,8 @@ This script picks on the key known issues and potential issues scripted as plugi
 One of they key things about this report is if there is no issue in a particular place you will not receive that section in the email. This ensures that you have only the information you need in front of you when you get into the office.
 
 This script is not to be confused with an Audit script, although the reporting framework can also be used for auditing scripts too. 
-[*Back to top*](#Title)
 
+[*Back to top*](#Title)
 <a name="Features">
 
 # What is checked for in the Exchange version ?
@@ -65,6 +65,6 @@ The following items are included as part of the vCheck-Exchange download, they a
 # More Info
 For more information, see the vCheck-vSphere repository: https://github.com/alanrenouf/vCheck-vSphere
 
-For an example Exchange output (doesnt contain all info) [click here](https://vcheck.report/samples/vCheck-Exchange_Sample.htm)
+For an example Exchange output (doesn't contain all info) [click here](https://vcheck.report/samples/vCheck-Exchange_Sample.htm)
 
 [*Back to top*](#Title)
